@@ -20,6 +20,8 @@
     <title>My Portfolio | Muhammad Ma'arif S</title>
   </head>
   <body id="home">
+    <!-- tombol back to top -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
       <div class="container">
@@ -259,6 +261,30 @@
           })
           .catch((error) => console.error("Error!", error.message));
       });
+    </script>
+
+    <script>
+      //tampilkan tombol:
+      mybutton = document.getElementById("myBtn");
+
+      // ketika pengguna menscroll kebawah 20px, tampilkan tombol
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // ketika pengguna mengklik tombol, kembali ke tampilan paling atas
+      function topFunction() {
+        document.body.scrollTop = 0; // untuk Safari
+        document.documentElement.scrollTop = 0; // untuk Chrome, Firefox, IE dan Opera
+      }
     </script>
   </body>
 </html>
